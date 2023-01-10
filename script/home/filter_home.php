@@ -6,7 +6,6 @@ $end= (isset($_POST['select_edate']))?$_POST['select_edate']:'';
 $Market_Authorisation_Holder = (isset($_POST['select_market']))?$_POST['select_market']:'';
 $Country_Market_holder = (isset($_POST['select_country']))?$_POST['select_country']:'';
 
-
 ?>
 <?php if(!empty($start)) : ?>
 <?php

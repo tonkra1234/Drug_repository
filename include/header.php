@@ -64,7 +64,7 @@ $_SESSION['user_name'] = $user_name;
                         </a>
                         <div class="d-flex align-items-center">
                             <div class="d-flex flex-column justify-content-start">
-                                <span class="fs-5 fw-bold text-primary">Drug</span> <!-- style="color:#003858 ;" -->
+                                <span class="fs-5 fw-bold text-primary">Drug</span>
                                 <span class="fs-5 fw-bold text-primary">Regulatory</span>
                                 <span class="fs-5 fw-bold text-primary">Authority</span>
                             </div>
