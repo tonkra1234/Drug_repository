@@ -7,6 +7,8 @@ require './dashboard_back.php';
 <link rel="stylesheet" href="../../public/css/dashboard.css">
 
 <div class="container my-5">
+    <a class="btn btn-warning mb-5 fw-bold" href="../home/home.php"> <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        Back to list of drugs</a>
     <h3 class="shadow rounded-3 bg-success text-white p-3 text-center mb-5">Dashboard</h3>
     <div class="row">
         <div class="col-9">
@@ -49,7 +51,7 @@ require './dashboard_back.php';
                     <div class="card-body">
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <img src="../../public/image/expired.png" alt="" width=90 class="mb-2">
-                            <h3>Nearly Expired Drugs</h3>
+                            <h3>Nearly Expired</h3>
                             <h1 class="card-title"><?php echo $expired['expired']?></h1>
                         </div>
                     </div>
@@ -118,22 +120,28 @@ require './dashboard_back.php';
         <div class="col-12 mt-3">
             <div class="card shadow">
                 <div class="card-body">
-                    <div class="d-flex">
-                        <div class="card mx-2" style="width:20rem;">
-                            <div class="card-header" style="background-color:#005A96  ;">
-                                <h6 class="text-center text-white fw-bolder fs-5">Registrated drugs (per year)</h6>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <?php foreach( $annual_title_human as $index => $year ) {
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="card" style="width:20rem;">
+                                <div class="card-header" style="background-color:#005A96  ;">
+                                    <h6 class="text-center text-white fw-bolder fs-5">Registrated drugs (per year)</h6>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <?php foreach( $annual_title_human as $index => $year ) {
                                     ?>
-                                    <li class="list-group-item"><?php echo $year;?> : <span class="fw-bold"><?php echo $annual_sum_human[$index];?> (Human) : <?php echo $annual_sum_veterinary[$index];?> (Vet)</span></li>
-                                <?php
+                                    <li class="list-group-item"><?php echo $year;?> : <span
+                                            class="fw-bold"><?php echo $annual_sum_human[$index];?> (Human) :
+                                            <?php echo $annual_sum_veterinary[$index];?> (Vet)</span></li>
+                                    <?php
                                     }
                                 ?>
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="mx-5" style="width:59rem;">
-                            <canvas id="annual_drug"></canvas>
+                        <div class="col-7">
+                            <div class="mx-5" style="width:47rem;">
+                                <canvas id="annual_drug"></canvas>
+                            </div>
                         </div>
 
                     </div>

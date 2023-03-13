@@ -4,6 +4,7 @@ require '../../include/connection.php';
 require '../../include/header.php';
 
 $Certificate_Number= (isset($_GET['Certificate_Number']))?$_GET['Certificate_Number']:'';
+$typeofcer= (isset($_GET['typeofcer']))?$_GET['typeofcer']:'';
 
 $sql = "SELECT * FROM drug_record WHERE Certificate_Number='$Certificate_Number'";
 $result = mysqli_query ($conn, $sql);
@@ -14,8 +15,18 @@ $data = $result->fetch_assoc();
         border-right: 1px solid;
     }
 </style>
+<div class="ms-5 mt-5">
+    <?php if($typeofcer === 'valid') :?>
+        <a class="btn btn-warning fw-bold" href="../list_of_drug/valid.php"> <i class="fa fa-arrow-left" aria-hidden="true"></i>  Back to previous page</a>
+    <?php elseif($typeofcer === 'expire') :?>
+        <a class="btn btn-warning fw-bold" href="../list_of_drug/expire.php"> <i class="fa fa-arrow-left" aria-hidden="true"></i>  Back to previous page</a>
+    <?php elseif($typeofcer === 'edit_back') :?>
+        <a class="btn btn-warning fw-bold" href="../home/home.php"> <i class="fa fa-arrow-left" aria-hidden="true"></i>  Back to home page</a>
+    <?php endif?>
+</div>
 
 <div class="card text-center m-5">
+
     <div class="card-header" style="background-color:#31968B ;">
         <span class="fs-4 fw-bold text-white" >Drug details</span>
     </div>
@@ -41,11 +52,15 @@ $data = $result->fetch_assoc();
                     </tr>
                     <tr>
                         <th scope="row">Category of Medical Product</th>
-                        <td><?php echo $data['Category_of_Medical_Product']?>C</td>
+                        <td><?php echo $data['Category_of_Medical_Product']?></td>
                     </tr>
                     <tr>
                         <th scope="row">Intention</th>
                         <td><?php echo $data['Intention']?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Marketer</th>
+                        <td><?php echo $data['Marketer']?></td>
                     </tr>
                     <tr>
                         <th scope="row">Generic Name</th>
@@ -74,6 +89,10 @@ $data = $result->fetch_assoc();
                     <tr>
                         <th scope="row">Pack Size</th>
                         <td><?php echo $data['Pack_Size']?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Price per unit</th>
+                        <td><?php echo $data['Price_per_unit']?></td>
                     </tr>
                     <tr>
                         <th scope="row">Type of Packaging</th>

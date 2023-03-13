@@ -12,7 +12,7 @@
 
 				<?php if ($page_no > 3): ?>
 				<li class="start page-item"><a href="?page_no=1&search=<?php echo $search_key;?>" class="page-link">1</a></li>
-				<li class="dots page-item" class="page-link">...</li>
+				<li class="dots page-item"><a class="page-link" href="#">...</a></li>
 				<?php endif; ?>
 
 				<?php if ($page_no-2 > 0): ?><li class="page page-item"><a class="page-link" href="?page_no=<?php echo $page_no-2 ?>&search=<?php echo $search_key;?>"><?php echo $page_no-2 ?></a></li><?php endif; ?>

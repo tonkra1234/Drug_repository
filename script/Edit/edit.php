@@ -139,17 +139,28 @@ if (isset($_POST['submit']))
                     </div>
 
                     <!-- Sixth line -->
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label>Manufacturer</label></br>
                         <input type="text" name="Manufacturer" id="Manufacturer" class="form-control" value="<?php echo $data['Manufacturer'];?>"></br>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
+                        <label>Marketer</label></br>
+                        <input type="text" name="Marketer" id="Marketer" class="form-control" value="<?php echo $data['Marketer'];?>"></br>
+                    </div>
+                    <div class="col-md-2">
                         <label>Country of Manufacturer</label></br>
                         <select class="form-select" id="Country_of_Manufacturer" name="Country_of_Manufacturer" >
                             <option value="<?php echo $data['Country_of_Manufacturer'];?>"><?php echo $data['Country_of_Manufacturer'];?></option>
                             <?php require '../create/country_select.php';?>
                         </select>
                     </div>
+                    <div class="col-md-3">
+                        <label>Price</label>
+                        <div class="input-group">
+                            <input type="text" name="Price_per_unit" id="Price_per_unit" class="form-control" value="<?php echo $data['Price_per_unit'];?>"></br>
+                        </div>
+                    </div>
+                    
                     <!-- Seventh line -->
                     <div class="col-md-12 mb-4">
                         <div class="row">

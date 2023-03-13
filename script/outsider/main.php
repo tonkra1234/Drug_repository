@@ -111,7 +111,7 @@ $_SESSION['user_name'] = $user_name;
 <div class="container my-5" style="min-height: 90vh;">
     <div class="rounded p-3 mb-5" style="background-color:#2980B9 ;">
         <div class="d-flex align-items-center justify-content-center ms-3">
-            <span class="text-light fs-2 fw-bold">Drugs in repository</span>
+            <span class="text-light fs-2 fw-bold">Registered Drugs</span>
         </div>
     </div>
     <div class="card p-3 py-4 mb-3">

@@ -53,5 +53,11 @@ $_SESSION['Issue_Date'] = $Issue_Date;
 $Expiry_Date = $_POST['Expiry_Date'];
 $_SESSION['Expiry_Date'] = $Expiry_Date;
 
+$Price_per_unit = $_POST['Price_per_unit'];
+$_SESSION['Price_per_unit'] = $Price_per_unit;
+
+$Marketer = $_POST['Marketer'];
+$_SESSION['Marketer'] = $Marketer;
+
 
 ?>

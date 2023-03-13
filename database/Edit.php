@@ -6,9 +6,9 @@ $sql = " UPDATE drug_record SET Essential='$Essential', Schedule='', Registratio
 Application_Type='$Application_Type', Market_Authorisation_Holder='$Market_Authorisation_Holder', 
 Category_of_Medical_Product='$Category_of_Medical_Product', Intention='$Intention', Generic_Name='$Generic_Name',
 Brand_Name='$Brand_Name', Dosage_Form='$Dosage_Form', Pack_Size='$Pack_Size',Type_of_Packaging='$Type_of_Packaging',
-Composition='$Composition', Manufacturer='$Manufacturer', Marketer='', Country_of_Manufacturer='$Country_of_Manufacturer', 
+Composition='$Composition', Manufacturer='$Manufacturer', Marketer='$Marketer', Country_of_Manufacturer='$Country_of_Manufacturer', 
 Therapeutic_Category='$Therapeutic_Category', Certificate_Number='$Certificate_Number_input', Issue_Date='$Issue_Date', 
-Expiry_Date='$Expiry_Date' WHERE Certificate_Number='$Certificate_Number' ";
+Expiry_Date='$Expiry_Date', Price_per_unit='$Price_per_unit' WHERE Certificate_Number='$Certificate_Number' ";
 
 if ($conn->query($sql) === TRUE) {
     echo "<script>
@@ -17,7 +17,7 @@ if ($conn->query($sql) === TRUE) {
         'Please, click button to continue!',
         'success'
     ).then(function() {
-        window.location = '../list_of_drug/detail.php?Certificate_Number=$Certificate_Number';
+        window.location = '../list_of_drug/detail.php?Certificate_Number=$Certificate_Number&typeofcer=edit_back';
     });
     </script>";
 } else {

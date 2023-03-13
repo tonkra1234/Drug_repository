@@ -1,5 +1,5 @@
 <?php
-$year = date("Y"); 
+$year = date("y"); 
 require '../../include/connection.php';
 require '../../include/header.php';
 
@@ -47,8 +47,7 @@ if (isset($_POST['submit']))
                     <div class="col-md-4">
                         <label>This product is intended for</label></br>
 
-                        <select class="form-select" id="Intention" name="Intention"
-                            onchange="RtypeSelect();">
+                        <select class="form-select" id="Intention" name="Intention" onchange="RtypeSelect();">
                             <option value="Veterinary Use">Veterinary Use</option>
                             <option value="Human Use">Human Use</option>
                         </select>
@@ -91,7 +90,8 @@ if (isset($_POST['submit']))
                         <!-- List for helping -->
                         <datalist id="TC">
                             <?php while($Therapeutic_cat = mysqli_fetch_array($Therapeutic)) {?>
-                                <option value="<?php echo $Therapeutic_cat['Therapeutic_category'];?>"><?php echo $Therapeutic_cat['Therapeutic_category'];?></option>
+                            <option value="<?php echo $Therapeutic_cat['Therapeutic_category'];?>">
+                                <?php echo $Therapeutic_cat['Therapeutic_category'];?></option>
                             <?php } ?>
                         </datalist>
                     </div>
@@ -119,7 +119,7 @@ if (isset($_POST['submit']))
                     </div>
                     <div class="col-md-4">
                         <label>Generic Name</label></br>
-                        <input type="text" name="Generic_Name" id="name" class="form-control"></br>
+                        <input type="text" name="Generic_Name" id="Generic_Name" class="form-control"></br>
                     </div>
                     <div class="col-md-4">
                         <label>Essential/Non-essential</label></br>
@@ -130,15 +130,32 @@ if (isset($_POST['submit']))
                     </div>
 
                     <!-- Sixth line -->
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label>Manufacturer</label></br>
                         <input type="text" name="Manufacturer" id="Manufacturer" class="form-control"></br>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
+                        <label>Marketer</label></br>
+                        <input type="text" name="Marketer" id="Marketer" class="form-control"></br>
+                    </div>
+                    <div class="col-md-2">
                         <label>Country of Manufacturer</label></br>
                         <select class="form-select" id="Country_of_Manufacturer" name="Country_of_Manufacturer">
                             <?php require './country_select.php';?>
-                        </select> 
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label>Price</label>
+                        <div class="input-group">
+                            <select class="form-select" id="Currency" name="Currency">
+                                <option value="Nu">Nu</option>
+                                <option value="INR">INR</option>
+                                <option value="USD">USD</option>
+                            </select>
+                            <input type="number" name="Price" id="Price" min="0" class="form-control" step="0.1">
+                            <span class="input-group-text" id="PER">PER</span>
+                            <input type="text" name="Unit" id="Unit" class="form-control">
+                        </div>
                     </div>
                     <!-- Seventh line -->
                     <div class="col-md-12 mb-4">
